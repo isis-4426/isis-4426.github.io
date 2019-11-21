@@ -20,6 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/resume.min.css" rel="stylesheet">
+  <link href="css/tp1.css" rel="stylesheet">
 
 </head>
 
@@ -51,6 +52,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#graph_tp1">Tarea Principal 1</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
@@ -251,6 +255,24 @@
 
     <hr class="m-0">
 
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="graph_tp1">
+      <div id="wrapper" class="wrapper">
+
+        <div id="tooltip" class="tooltip">
+            <div class="tooltip-date">
+                <span id="date"></span>
+            </div>
+            <div class="tooltip-temperature">
+                <span id="min-temperature"></span>&deg;C
+                -
+                <span id="max-temperature"></span> NEWS2
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
       <div class="w-100">
         <h2 class="mb-5">Awards &amp; Certifications</h2>
@@ -294,8 +316,12 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+  <!-- Viz libs -->
+  <script src="vendor/d3/d3.min.js"></script>
+
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+  <script src="js/tp1.js"></script>
 
 </body>
 

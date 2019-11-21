@@ -52,6 +52,9 @@ function modules() {
   // Bootstrap
   var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
     .pipe(gulp.dest('./vendor/bootstrap'));
+  // D3
+  var d3 = gulp.src('./node_modules/d3/dist/**/*')
+    .pipe(gulp.dest('./vendor/d3'));
   // Font Awesome CSS
   var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
     .pipe(gulp.dest('./vendor/fontawesome-free/css'));
@@ -99,7 +102,7 @@ function css() {
 function js() {
   return gulp
     .src([
-      './js/*.js',
+      './js/resume.js',
       '!./js/*.min.js'
     ])
     .pipe(uglify())
