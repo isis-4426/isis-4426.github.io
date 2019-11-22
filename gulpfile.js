@@ -55,6 +55,9 @@ function modules() {
   // D3
   var d3 = gulp.src('./node_modules/d3/dist/**/*')
     .pipe(gulp.dest('./vendor/d3'));
+  // gulp
+  var vl = gulp.src('./node_modules/vega-lite-api/build/**/*')
+    .pipe(gulp.dest('./vendor/vega-lite-api'));
   // Font Awesome CSS
   var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
     .pipe(gulp.dest('./vendor/fontawesome-free/css'));
