@@ -30,7 +30,7 @@ let plot = function drawScatter() {
   const label = { align: 'left', dx: 5, dy: -5 };
   const white = { stroke: 'white', strokeWidth: 2 };
 
-  return vl.data(data)
+  chartSpec = vl.data(data)
     .layer(
       line,
       // add a rule mark to serve as a guide line
@@ -48,8 +48,9 @@ let plot = function drawScatter() {
     )
     .width(400)
     .height(400)
-    .render();
+    .toJSON();
 
+  vegaEmbed("#chart", chartSpec);
 
 }
 
