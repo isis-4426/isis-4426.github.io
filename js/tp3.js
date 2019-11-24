@@ -1,14 +1,15 @@
 let data;
+
 async function loadData() {
-  data = await d3.csv('https://gist.githubusercontent.com/cfsepulveda/c39dec0ac78911c5846a473176b2b629/raw/5fc774bd502099cf098f7dbccc9c1ec66facca76/delitos.csv');
-  plot();
+  data = await d3.csv('csv/tp3.csv', d3.autoType);
+  plot(data);
+  loadSelect();
+  addListener();
 }
 
-let plot = function drawScatter() {
+let plot = function drawScatter(data) {
 
   // 1. Access data
-
-  console.log(data);
 
   // select a point for which to provide details-on-demand
   const hover = vl.selectSingle()
@@ -19,9 +20,9 @@ let plot = function drawScatter() {
 
   // define our base line chart of stock values
   const line = vl.markLine().encode(
-    vl.x().field('ano').type('temporal'),
-    vl.y().fieldQ('numero').scale({ type: 'linear' }),
-    vl.color().fieldN('delito')
+    vl.x().field('fecha_hora').type('temporal'),
+    vl.y().fieldQ('news2').scale({ type: 'linear' }),
+    vl.color().fieldN('ingreso')
   );
   // shared base for new layers, filtered to hover selection
   const base = line.transform(vl.filter(hover));
@@ -36,22 +37,71 @@ let plot = function drawScatter() {
       // add a rule mark to serve as a guide line
       vl.markRule({ color: '#aaa' })
         .transform(vl.filter(hover))
-        .encode(vl.x().fieldT('ano')),
+        .encode(vl.x().fieldT('fecha_hora')),
       // add circle marks for selected time points, hide unselected points
       line.markCircle()
         .select(hover) // use as anchor points for selection
         .encode(vl.opacity().if(hover, vl.value(1)).value(0)),
       // add white stroked text to provide a legible background for labels
-      base.markText(label, white).encode(vl.text().fieldQ('numero')),
+      base.markText(label, white).encode(vl.text().fieldQ('news2')),
       // add text labels for stock values
-      base.markText(label).encode(vl.text().fieldQ('numero'))
+      base.markText(label).encode(vl.text().fieldQ('news2'))
     )
-    .width(400)
-    .height(400)
+    .width(600)
+    .height(600)
     .toJSON();
 
   vegaEmbed("#chart", chartSpec);
 
+}
+
+
+function loadSelect() {
+  const inputSection = new Map();
+  const inputRoom = new Map();
+  const inputNivelConciencia = new Map();
+  const inputCategory = new Map();
+
+  data.forEach(element => {
+    if (!inputSection.has(element.seccion) && element.seccion) {
+      inputSection.set(element.seccion, element.seccion);
+    }
+    if (!inputSection.has(element.habitacion) && element.habitacion) {
+      inputRoom.set(element.habitacion, element.habitacion);
+    }
+    if (!inputNivelConciencia.has(element.nivel_conc) && element.nivel_conc) {
+      inputNivelConciencia.set(element.nivel_conc, element.nivel_conc);
+    }
+    if (!inputCategory.has(element.clasificacion) && element.clasificacion) {
+      inputCategory.set(element.clasificacion, element.clasificacion);
+    }
+  });
+
+  inputSection.forEach(value => {
+    $('#inputSection').append(`<option value="${value}"> ${value}  </option>`);
+  })
+
+  inputRoom.forEach(value => {
+    $('#inputRoom').append(`<option value="${value}"> ${value}  </option>`);
+  })
+
+  inputNivelConciencia.forEach(value => {
+    $('#inputAlert').append(`<option value="${value}"> ${value}  </option>`);
+  })
+
+  inputCategory.forEach(value => {
+    $('#inputCategory').append(`<option value="${value}"> ${value}  </option>`);
+  })
+
+}
+
+function addListener() {
+  $('#inputSection').change(function () {
+    const filteredData = data.filter(x => {
+      return x.seccion === this.value;
+    })
+    plot(filteredData)
+  });
 }
 
 loadData();
