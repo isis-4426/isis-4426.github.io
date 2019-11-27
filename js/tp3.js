@@ -2,14 +2,12 @@ let data;
 
 async function loadData() {
   data = await d3.csv('csv/tp3.csv', d3.autoType);
-  plot(data);
+  draw(data);
   loadSelect();
   addListener();
 }
 
-let plot = function drawScatter(data) {
-
-  // 1. Access data
+function draw(data) {
 
   // select a point for which to provide details-on-demand
   const hover = vl.selectSingle()
@@ -96,12 +94,58 @@ function loadSelect() {
 }
 
 function addListener() {
+  let filteredData;
   $('#inputSection').change(function () {
-    const filteredData = data.filter(x => {
-      return x.seccion === this.value;
-    })
-    plot(filteredData)
+    filter();
   });
+
+  $('#inputRoom').change(function () {
+    filter();
+  });
+
+  $('#inputAlert').change(function () {
+    filter();
+  });
+
+  $('#inputCategory').change(function () {
+    filter();
+  });
+}
+
+function filter() {
+  filteredData = Object.assign([], data);
+
+  let section = $('#inputSection').val();
+  let room = $('#inputRoom').val();
+  let alert = $('#inputAlert').val();
+  let category = $('#inputCategory').val();
+
+  if (section) {
+    filteredData = filteredData.filter(x => {
+      return x.seccion === section;
+    });
+  }
+
+  if (room) {
+    filteredData = filteredData.filter(x => {
+      return x.habitacion.toString() === room.toString();
+    });
+  }
+
+  if (alert) {
+    filteredData = filteredData.filter(x => {
+      return x.nivel_conc === alert;
+    });
+  }
+
+  if (category) {
+    filteredData = filteredData.filter(x => {
+      return x.clasificacion === category;
+    });
+  }
+
+  draw(this.filteredData);
+
 }
 
 loadData();
