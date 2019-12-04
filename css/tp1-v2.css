@@ -1,0 +1,31 @@
+#education .tp1-v2-view{
+    display: flex;
+    
+}
+
+#education .tp1-v2-texto{
+    flex-grow: 2;
+    padding-left: 20px;
+    border: 2px solid green;
+    align-self: center;
+}
+
+#education .box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 6;
+    flex-direction: column;
+    /* width: 800px; */
+    height: 500px;
+    align-content: space-between;
+    border: 2px solid blue;
+  }
+  
+  #education svg{
+    border: 2px solid red;
+    margin-top: 20px;
+  }
+
+  #education .mb-5 {
+    margin-bottom: 1rem!important;
+}
