@@ -1,6 +1,7 @@
 #experience .tp1-v1-view{
     display: flex;
-    
+    height: 80%;
+    /* border: 2px solid yellow; */
 }
 
 #experience .tp1-v1-texto{
@@ -19,6 +20,7 @@
     height: 550px;
     align-content: space-between;
     /* border: 2px solid blue; */
+    align-self: center;
   }
   
   #experience svg{
