@@ -9,12 +9,12 @@ async function drawBars() {
   const width = 250
   let dimensions = {
     width: width,
-    height: width * 0.7,
+    height: width,
     margin: {
-      top: 80,
-      right: 50,
+      top: 40,
+      right: 10,
       bottom: 50,
-      left: 50,
+      left: 10,
     },
   }
   dimensions.boundedWidth = dimensions.width
@@ -81,9 +81,10 @@ async function drawBars() {
         .text(yAccessor)
         .style("text-anchor", "middle")
         .attr("fill", "black")
-        .style("font-size", "8px")
+        .style("font-size", "10px")
         .style("font-family", "sans-serif")
 
+    const opacityMean = 0.7    
     const mean = d3.mean(dataset, metricAccessor)
     const meanLine = bounds.append("line")
         .attr("x1", xScale(mean))
@@ -91,14 +92,16 @@ async function drawBars() {
         .attr("y1", -15)
         .attr("y2", dimensions.boundedHeight)
         .attr("stroke", "maroon")
+        .style("opacity", opacityMean)
         .attr("stroke-dasharray", "2px 4px")
 
     const meanLabel = bounds.append("text")
         .attr("x", xScale(mean))
         .attr("y", -20)
-        .text("mean")
+        .text("media")
         .attr("fill", "maroon")
-        .style("font-size", "12px")
+        .style("font-size", "9px")
+        .style("opacity", opacityMean)
         .style("text-anchor", "middle")
 
     // 6. Draw peripherals

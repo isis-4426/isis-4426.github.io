@@ -1,12 +1,13 @@
 #education .tp1-v2-view{
-    display: flex;
-    
+  display: flex;
+  height: 80%;
+  /* border: 2px solid yellow; */
 }
 
 #education .tp1-v2-texto{
     flex-grow: 2;
     padding-left: 20px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     align-self: center;
 }
 
@@ -16,13 +17,15 @@
     flex-grow: 6;
     flex-direction: column;
     /* width: 800px; */
-    height: 500px;
+    height: 600px;
     align-content: space-between;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    align-self: center;
+    justify-content: center;
   }
   
   #education svg{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 20px;
   }
 
