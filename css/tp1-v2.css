@@ -1,6 +1,7 @@
 #education .tp1-v2-view{
-    display: flex;
-    
+  display: flex;
+  height: 80%;
+  /* border: 2px solid yellow; */
 }
 
 #education .tp1-v2-texto{
@@ -19,6 +20,7 @@
     height: 500px;
     align-content: space-between;
     border: 2px solid blue;
+    align-self: center;
   }
   
   #education svg{
