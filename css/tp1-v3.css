@@ -1,0 +1,31 @@
+#skills .tp1-v3-view{
+    display: flex;
+    
+}
+
+#skills .tp1-v3-texto{
+    flex-grow: 3;
+    padding-left: 20px;
+    border: 2px solid green;
+    align-self: center;
+}
+
+#skills .box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 4;
+    flex-direction: column;
+    /* width: 800px; */
+    height: 600px;
+    align-content: space-between;
+    border: 2px solid blue;
+  }
+  
+  #skills svg{
+    border: 2px solid red;
+    margin-top: 20px;
+  }
+
+  #skills .mb-5 {
+    margin-bottom: 1rem!important;
+}
