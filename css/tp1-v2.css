@@ -1,33 +1,34 @@
-#experience .tp1-v1-view{
+#education .tp1-v2-view{
   display: flex;
   height: 80%;
   /* border: 2px solid yellow; */
 }
 
-#experience .tp1-v1-texto{
+#education .tp1-v2-texto{
     flex-grow: 2;
     padding-left: 20px;
     /* border: 2px solid green; */
     align-self: center;
 }
 
-#experience .box {
+#education .box {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 6;
     flex-direction: column;
     /* width: 800px; */
-    height: 550px;
+    height: 600px;
     align-content: space-between;
     /* border: 2px solid blue; */
     align-self: center;
+    justify-content: center;
   }
   
-  #experience svg{
-/*     border: 2px solid red; */
+  #education svg{
+    /* border: 2px solid red; */
     margin-top: 20px;
   }
 
-  #experience .mb-5 {
+  #education .mb-5 {
     margin-bottom: 1rem!important;
 }
