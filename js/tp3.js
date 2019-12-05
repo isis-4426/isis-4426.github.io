@@ -1,5 +1,5 @@
 let data;
-const news2Value = ["fr","temp","so2","fc","tas","tad"];
+const news2Value = ["fr", "temp", "so2", "fc", "tas", "tad"];
 let ingreso;
 async function loadData() {
 	data = await d3.csv('csv/tp3.csv', d3.autoType);
@@ -22,27 +22,38 @@ function draw(data) {
 		.markLine()
 		.encode(
 			vl.x().field('fecha_hora').type('temporal'),
-			vl.y().fieldQ('news2').scale({ type: 'linear' }),
+			vl.y().fieldQ('news2').scale({
+				type: 'linear'
+			}),
 			vl.color().fieldN('ingreso')
 		);
 	// shared base for new layers, filtered to hover selection
 	const base = line.transform(vl.filter(hover));
 
 	// mark properties for text label layers
-	const label = { align: 'left', dx: 5, dy: -5 };
-	const white = { stroke: 'white', strokeWidth: 2 };
+	const label = {
+		align: 'left',
+		dx: 5,
+		dy: -5
+	};
+	const white = {
+		stroke: 'white',
+		strokeWidth: 2
+	};
 
 	chartSpec = vl
 		.data(data)
 		.layer(
 			line,
 			// add a rule mark to serve as a guide line
-			vl.markRule({ color: '#aaa' }).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
+			vl.markRule({
+				color: '#aaa'
+			}).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
 			// add circle marks for selected time points, hide unselected points
 			line
-				.markCircle()
-				.select(hover) // use as anchor points for selection
-				.encode(vl.opacity().if(hover, vl.value(1)).value(0)),
+			.markCircle()
+			.select(hover) // use as anchor points for selection
+			.encode(vl.opacity().if(hover, vl.value(1)).value(0)),
 			// add white stroked text to provide a legible background for labels
 			base.markText(label, white).encode(vl.text().fieldQ('news2')),
 			// add text labels for stock values
@@ -50,11 +61,10 @@ function draw(data) {
 		)
 		.width(600)
 		.height(600)
-    .toJSON();
-    
-    
+		.toJSON();
 
-  //draw_details(detail);
+
+	//draw_details(detail);
 
 	vegaEmbed('#chart', chartSpec);
 }
@@ -73,36 +83,65 @@ function draw_details(data) {
 		.markLine()
 		.encode(
 			vl.x().field('fecha_hora').type('temporal'),
-			vl.y().fieldQ('number').scale({ type: 'linear' }),
-      vl.color().fieldN('descripcion'),
-      vl.tooltip([
-        {field: "fecha_hora", type: "temporal", format: "%b %d, %H:%M", title: "Fecha Hora"},
-        {field: "descripcion", title: "Variable"},
-        {field: "number", title: "Valor"}
-        ]) // show the Name and Origin fields in a tooltip
+			vl.y().fieldQ('number').scale({
+				type: 'linear'
+			}),
+			vl.color().fieldN('descripcion'),
+			vl.tooltip([{
+					field: "fecha_hora",
+					type: "temporal",
+					format: "%b %d, %H:%M",
+					title: "Fecha Hora"
+				},
+				{
+					field: "descripcion",
+					title: "Variable"
+				},
+				{
+					field: "number",
+					title: "Valor"
+				},
+				{
+					field: "habitacion",
+					title: "Habitacion"
+				},
+				{
+					field: "conciencia",
+					title: "Conciencia"
+				},
+			]) // show the Name and Origin fields in a tooltip
 		);
 	// shared base for new layers, filtered to hover selection
 	const base = line.transform(vl.filter(hover));
 
 	// mark properties for text label layers
-	const label = { align: 'left', dx: 5, dy: -5 };
-	const white = { stroke: 'white', strokeWidth: 2 };
+	const label = {
+		align: 'left',
+		dx: 5,
+		dy: -5
+	};
+	const white = {
+		stroke: 'white',
+		strokeWidth: 2
+	};
 
 	chartSpec = vl
-    .data(data)
+		.data(data)
 		.layer(
 			line,
 			// add a rule mark to serve as a guide line
-      vl.markRule({ color: '#aaa' }).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
+			vl.markRule({
+				color: '#aaa'
+			}).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
 			// add circle marks for selected time points, hide unselected points
 			line
-				.markCircle()
-				.select(hover) // use as anchor points for selection
-				.encode(vl.opacity().if(hover, vl.value(1)).value(0)),
+			.markCircle()
+			.select(hover) // use as anchor points for selection
+			.encode(vl.opacity().if(hover, vl.value(1)).value(0)),
 			// add white stroked text to provide a legible background for labels
 			base.markText(label, white).encode(vl.text().fieldQ('number')),
 			// add text labels for stock values
-			base.markText(label).encode(vl.text().fieldQ('number'))
+			base.markText(label).encode(vl.text().fieldQ('number')),
 		)
 		.width(600)
 		.height(600)
@@ -150,19 +189,19 @@ function loadSelect() {
 }
 
 function addListener() {
-	$('#inputSection').change(function() {
+	$('#inputSection').change(function () {
 		filter();
 	});
 
-	$('#inputRoom').change(function() {
+	$('#inputRoom').change(function () {
 		filter();
 	});
 
-	$('#inputAlert').change(function() {
+	$('#inputAlert').change(function () {
 		filter();
 	});
 
-	$('#inputCategory').change(function() {
+	$('#inputCategory').change(function () {
 		filter();
 	});
 }
@@ -199,25 +238,31 @@ function filter() {
 		});
 	}
 
-  //draw_details(transpose(data));
+	//draw_details(transpose(data));
 	draw(this.filteredData);
 }
 
 loadData();
 
-function test(){
-  this.filteredData = this.filteredData.filter(data=>data.ingreso.toString() ==="3105435");
-  const details = transpose(Object.assign([],this.filteredData));
-draw_details(details);
+function test() {
+	this.filteredData = this.filteredData.filter(data => data.ingreso.toString() === "3097347");
+	const details = transpose(Object.assign([], this.filteredData));
+	draw_details(details);
 }
 
 function transpose(data) {
-  let transpose =[];
-  for (let x = 0; x < data.length; x++) {
+	let transpose = [];
+	for (let x = 0; x < data.length; x++) {
 
-    for (let y = 0; y < news2Value.length; y++) {
-      transpose.push({"descripcion":news2Value[y],"number":data[x][news2Value[y]].toString(),"fecha_hora":data[x].fecha_hora})
-    }
-  }
-  return transpose;
+		for (let y = 0; y < news2Value.length; y++) {
+			transpose.push({
+				"descripcion": news2Value[y],
+				"number": data[x][news2Value[y]].toString(),
+				"fecha_hora": data[x].fecha_hora,
+				"habitacion": data[x].habitacion,
+				"conciencia": data[x].nivel_conc
+			})
+		}
+	}
+	return transpose;
 }
