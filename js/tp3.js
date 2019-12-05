@@ -1,5 +1,6 @@
 let data;
 const news2Value = ["fr","temp","so2","fc","tas","tad"];
+let ingreso;
 async function loadData() {
 	data = await d3.csv('csv/tp3.csv', d3.autoType);
 	draw(data);
@@ -49,7 +50,9 @@ function draw(data) {
 		)
 		.width(600)
 		.height(600)
-		.toJSON();
+    .toJSON();
+    
+    
 
   //draw_details(detail);
 
@@ -71,7 +74,12 @@ function draw_details(data) {
 		.encode(
 			vl.x().field('fecha_hora').type('temporal'),
 			vl.y().fieldQ('number').scale({ type: 'linear' }),
-			vl.color().fieldN('descripcion')
+      vl.color().fieldN('descripcion'),
+      vl.tooltip([
+        {field: "fecha_hora", type: "temporal", format: "%b %d, %H:%M", title: "Fecha Hora"},
+        {field: "descripcion", title: "Variable"},
+        {field: "number", title: "Valor"}
+        ]) // show the Name and Origin fields in a tooltip
 		);
 	// shared base for new layers, filtered to hover selection
 	const base = line.transform(vl.filter(hover));
@@ -81,11 +89,11 @@ function draw_details(data) {
 	const white = { stroke: 'white', strokeWidth: 2 };
 
 	chartSpec = vl
-		.data(data)
+    .data(data)
 		.layer(
 			line,
 			// add a rule mark to serve as a guide line
-			vl.markRule({ color: '#aaa' }).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
+      vl.markRule({ color: '#aaa' }).transform(vl.filter(hover)).encode(vl.x().fieldT('fecha_hora')),
 			// add circle marks for selected time points, hide unselected points
 			line
 				.markCircle()
@@ -142,7 +150,6 @@ function loadSelect() {
 }
 
 function addListener() {
-	let filteredData;
 	$('#inputSection').change(function() {
 		filter();
 	});
@@ -199,8 +206,8 @@ function filter() {
 loadData();
 
 function test(){
+  this.filteredData = this.filteredData.filter(data=>data.ingreso.toString() ==="3105435");
   const details = transpose(Object.assign([],this.filteredData));
-  console.table(details);
 draw_details(details);
 }
 
