@@ -80,12 +80,12 @@ function draw(data) {
     return vl.markLine().encode(
       vl
         .x()
-        .fieldQ("fecha_hora")
+        .field("fecha_hora")
         .type("temporal"),
       vl.y().fieldQ(variable),
       vl
         .color()
-        .if(hover, vl.fieldO("news2"))
+        .if(hover, vl.fieldQ("news2"))
         .value("grey"),
       vl
         .opacity()
