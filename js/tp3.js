@@ -2,6 +2,7 @@ const inputSection = new Map();
 const inputRoom = new Map();
 const inputNivelConciencia = new Map();
 const inputCategory = new Map();
+const inputIngreso = new Map();
 
 async function loadData() {
   data = await d3.csv("csv/tp3.csv", d3.autoType);
@@ -12,8 +13,9 @@ async function loadData() {
 function draw(data) {
   const selectSection = vl
     .selectSingle("seccion")
+    .init({ seccion: Array.from(inputSection.values())[0] })
     .fields("seccion")
-    .bind(vl.menu(Array.from(inputSection)));
+    .bind(vl.menu(Array.from(inputSection.values())));
 
   const selectRoom = vl
     .selectSingle("habitacion")
@@ -30,13 +32,24 @@ function draw(data) {
     .fields("clasificacion")
     .bind(vl.menu(Array.from(inputCategory.values())));
 
+  const selectIngreso = vl
+    .selectSingle("ingreso")
+    .fields("ingreso")
+    .bind(vl.menu(Array.from(inputIngreso.values())));
+
   const hover = vl.selectSingle();
 
   const line = vl
     .markLine()
     .transform(
       vl.filter(
-        vl.and(selectSection, selectRoom, selectNivelConciencia, selectCategory)
+        vl.and(
+          selectSection,
+          selectRoom,
+          selectNivelConciencia,
+          selectCategory,
+          selectIngreso
+        )
       )
     )
     .select(
@@ -44,6 +57,7 @@ function draw(data) {
       selectRoom,
       selectNivelConciencia,
       selectCategory,
+      selectIngreso,
       hover
     )
     .encode(
@@ -106,6 +120,10 @@ function loadList() {
     }
     if (!inputCategory.has(element.clasificacion) && element.clasificacion) {
       inputCategory.set(element.clasificacion, element.clasificacion);
+    }
+
+    if (!inputIngreso.has(element.ingreso) && element.ingreso) {
+      inputIngreso.set(element.ingreso, element.ingreso);
     }
   });
 }
