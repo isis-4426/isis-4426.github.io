@@ -1,33 +1,39 @@
 #experience .tp1-v1-view{
   display: flex;
   height: 80%;
+  width: 115%;
   /* border: 2px solid yellow; */
 }
 
 #experience .tp1-v1-texto{
-    flex-grow: 2;
-    padding-left: 20px;
-    /* border: 2px solid green; */
-    align-self: center;
+  flex-grow: 2;
+  padding-left: 30px;
+  /* border: 2px solid green; */
+  align-self: center;
 }
 
 #experience .box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 6;
-    flex-direction: column;
-    /* width: 800px; */
-    height: 550px;
-    align-content: space-between;
-    /* border: 2px solid blue; */
-    align-self: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 6;
+  flex-direction: column;
+  height: 550px;
+  align-content: space-between;
+  /* border: 2px solid blue; */
+  align-self: center;
+}
   
-  #experience svg{
+#experience svg{
 /*     border: 2px solid red; */
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
 
-  #experience .mb-5 {
-    margin-bottom: 1rem!important;
+#experience .mb-5 {
+  margin-bottom: 1rem!important;
+}
+
+.tp1-v1-texto p {
+  width: 200px;
+  text-align: center;
+  font-size: large;
 }
