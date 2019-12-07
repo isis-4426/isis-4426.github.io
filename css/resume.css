@@ -174,9 +174,3 @@ a {
 a:hover, a:focus, a:active {
   color: #721616;
 }
-
-.social-icons {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-}
