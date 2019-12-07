@@ -1,0 +1,11 @@
+.vega-embed {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.vega-bindings {
+    width: 350px !important;
+    position: absolute;
+    top: 30px;
+    right: -400px;
+}

@@ -105,6 +105,9 @@ function draw(data) {
     .toJSON();
 
   vegaEmbed("#chart", chartSpec);
+
+  $( "select" ).addClass( "form-control" );
+  
 }
 
 function loadList() {
