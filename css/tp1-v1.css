@@ -33,7 +33,10 @@
 }
 
 .tp1-v1-texto p {
-  width: 200px;
+  position: relative;
+  width: 300px;
   text-align: center;
   font-size: large;
+  color: #343a40;
+  left: 100px;
 }
