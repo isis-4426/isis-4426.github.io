@@ -6,6 +6,7 @@ const inputIngreso = new Map();
 
 async function loadData() {
   data = await d3.csv("../csv/tp3.csv", d3.autoType);
+  data = filterDateNow(data);
   loadList();
   draw(data);
 }
@@ -100,8 +101,6 @@ function draw(data) {
   chartSpec = vl
     .data(data)
     .vconcat(line, detailsChart1, detailsChart2)
-    // .width(600)
-    // .height(600)
     .toJSON();
 
   vegaEmbed("#chart", chartSpec);
@@ -131,4 +130,8 @@ function loadList() {
   });
 }
 
+function filterDateNow(data) {
+  const now = new Date();
+  return data.filter(x => new Date(x.fecha_hora).getDate() === now.getDate());
+}
 loadData();
