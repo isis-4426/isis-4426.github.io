@@ -11,14 +11,16 @@ async function loadData() {
 function draw(data) {
   // select a point for which to provide details-on-demand
   const hover = vl
-    .selectSingle()
-    .encodings("x") // limit selection to x-axis value
-    .on("mouseover") // select on mouseover events
-    .nearest(true) // select data point nearest the cursor
-    .empty("none"); // empty selection includes no data points
+    .selectSingle();
+    // .encodings("x") // limit selection to x-axis value
+    // .on("mouseover") // select on mouseover events
+    // .nearest(true) // select data point nearest the cursor
+    // .empty("none"); // empty selection includes no data points
 
   // define our base line chart of stock values
-  const line = vl.markLine().encode(
+  const line = vl.markLine()
+  .select(hover)
+  .encode(
     vl
       .x()
       .field("fecha_hora")
@@ -29,54 +31,30 @@ function draw(data) {
       .scale({
         type: "linear"
       }),
-    vl.color().fieldN("ingreso")
+    vl.color()
+      .if(hover, vl.fieldN("ingreso")).value('grey')
   );
-  // shared base for new layers, filtered to hover selection
-  const base = line.transform(vl.filter(hover));
 
-  // mark properties for text label layers
-  const label = {
-    align: "left",
-    dx: 5,
-    dy: -5
-  };
-  const white = {
-    stroke: "white",
-    strokeWidth: 2
-  };
+  const details = vl.markLine()
+  .encode(
+    vl.x().fieldQ(vl.repeat('column')),
+    vl.y().fieldQ(vl.repeat('row')),
+    vl.color().if(hover, vl.fieldO('news2')).value('grey'),
+    vl.opacity().if(hover, vl.value(0.8)).value(0.1)
+  )
+  // .width(140)
+  // .height(140)
+  .repeat({
+    column: ['temp','fr','fc','tas','tad','so2'],
+    row: ['news2']
+  });
 
   chartSpec = vl
     .data(data)
-    .layer(
-      line,
-      // add a rule mark to serve as a guide line
-      vl
-        .markRule({
-          color: "#aaa"
-        })
-        .transform(vl.filter(hover))
-        .encode(vl.x().fieldT("fecha_hora")),
-      // add circle marks for selected time points, hide unselected points
-      line
-        .markCircle()
-        .select(hover) // use as anchor points for selection
-        .encode(
-          vl
-            .opacity()
-            .if(hover, vl.value(1))
-            .value(0)
-        ),
-      // add white stroked text to provide a legible background for labels
-      base.markText(label, white).encode(vl.text().fieldQ("news2")),
-      // add text labels for stock values
-	  base.markText(label).encode(vl.text().fieldQ("news2"))
-	  
-    )
-    .width(600)
-    .height(600)
+    .vconcat(line, details)
+    // .width(600)
+    // .height(600)
     .toJSON();
-
-  //draw_details(detail);
 
   vegaEmbed("#chart", chartSpec);
 }
