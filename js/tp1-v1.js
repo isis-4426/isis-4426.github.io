@@ -3,10 +3,10 @@ async function drawScatter() {
   
     //Access Data
     const dataset = await d3.csv("./../data/tp1.csv")
-    console.log(dataset)
+    //console.log(dataset)
   
   
-    console.table(dataset[0])
+    //console.table(dataset[0])
   
   
   

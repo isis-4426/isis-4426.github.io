@@ -2,7 +2,7 @@ async function drawBars() {
 
   // 1. Access data
   const dataset = await d3.csv("./../data/tp1.csv")
-  console.table(dataset[0])
+  //console.table(dataset[0])
 
   // 2. Create chart dimensions
 
