@@ -1,34 +1,42 @@
 #education .tp1-v2-view{
   display: flex;
   height: 80%;
+  width: 115%;
   /* border: 2px solid yellow; */
 }
 
 #education .tp1-v2-texto{
-    flex-grow: 2;
-    padding-left: 20px;
-    /* border: 2px solid green; */
-    align-self: center;
+  flex-grow: 2;
+  padding-left: 30px;
+  /* border: 2px solid green; */
+  align-self: center;
 }
 
 #education .box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 6;
-    flex-direction: column;
-    /* width: 800px; */
-    height: 600px;
-    align-content: space-between;
-    /* border: 2px solid blue; */
-    align-self: center;
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 6;
+  flex-direction: column;
+  height: 550px;
+  align-content: space-between;
+  /* border: 2px solid blue; */
+  align-self: center;
+}
   
-  #education svg{
-    /* border: 2px solid red; */
-    margin-top: 20px;
-  }
+#education svg{
+/*     border: 2px solid red; */
+  margin-top: 20px;
+}
 
-  #education .mb-5 {
-    margin-bottom: 1rem!important;
+#education .mb-5 {
+  margin-bottom: 1rem!important;
+}
+
+.tp1-v2-texto p {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  font-size: large;
+  color: #343a40;
+  left: 100px;
 }
