@@ -4,11 +4,11 @@ async function drawScatter() {
 
   const dataset = await d3.csv("./../data/tp1.csv")
 
-  //console.log(dataset)
-  //console.table(dataset[0])
+  console.log(dataset)
+  console.table(dataset[0])
 
   // set data constants
-  const xAccessor = d=>+d.SO2
+  const xAccessor = d=>+d.FC
   const yAccessor = d=>+d.NEWS2
   const colorScaleYear = 2000
   const parseDate = d3.timeParse("%Y-%m-%d")
@@ -43,7 +43,7 @@ async function drawScatter() {
 
   // 3. Draw canvas
 
-  const wrapper = d3.select("#tp1-v3-svg")
+  const wrapper = d3.select("#tp1-v5-svg")
     .append("svg")
       .attr("width", dimensions.width)
       .attr("height", dimensions.height)
@@ -168,7 +168,7 @@ async function drawScatter() {
       .attr("class", "x-axis-label")
       .attr("x", dimensions.boundedWidth / 2)
       .attr("y", dimensions.margin.bottom - 10)
-      .html("Saturacion de Oxigeno")
+      .html("Frecuencia Cardiaca")
 
   const yAxisGenerator = d3.axisLeft()
     .scale(yScale)
@@ -262,7 +262,7 @@ async function drawScatter() {
   voronoi.on("mouseenter", onVoronoiMouseEnter)
     .on("mouseleave", onVoronoiMouseLeave)
 
-  const tooltip = d3.select("#tooltip-so2")
+  const tooltip = d3.select("#tooltip-fc")
   const hoverElementsGroup = bounds.append("g")
       .attr("opacity", 0)
 
@@ -302,10 +302,10 @@ async function drawScatter() {
         + dimensions.histogramHeight)
 
     const formatTemperature = d3.format(".1f")
-    tooltip.select("#news-so2")
+    tooltip.select("#news-fc")
         .text(formatTemperature(yAccessor(datum)))
 
-    tooltip.select("#so2")
+    tooltip.select("#fc")
         .text(formatTemperature(xAccessor(datum)))
 
     const dateParser = d3.timeParse("%Y-%m-%d")

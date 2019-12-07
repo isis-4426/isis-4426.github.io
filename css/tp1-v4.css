@@ -1,16 +1,16 @@
-#skills .tp1-v3-view{
+#interests .tp1-v4-view{
     display: flex;
     
 }
 
-#skills .tp1-v3-texto{
+#interests .tp1-v4-texto{
     flex-grow: 3;
     padding-left: 20px;
 /*     border: 2px solid green; */
     align-self: center;
 }
 
-#skills .box {
+#interests .box {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 4;
@@ -21,11 +21,11 @@
 /*     border: 2px solid blue; */
   }
   
-  #skills svg{
+  #interests svg{
 /*     border: 2px solid red; */
     margin-top: 20px;
   }
 
-  #skills .mb-5 {
+  #interests .mb-5 {
     margin-bottom: 1rem!important;
 }
