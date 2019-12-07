@@ -16,24 +16,22 @@ function draw(data) {
   )
   .width(700);
 
-  const details1 = vl.markLine()
-  .encode(
-    vl.x().fieldQ(vl.repeat('column')).type("temporal"),
-    vl.y().fieldQ(vl.repeat('row')),
-    vl.color().if(hover, vl.fieldO('news2')).value('grey'),
-    vl.opacity().if(hover, vl.value(0.8)).value(0.1)
-  )
-  // .width(140)
-  // .height(140)
-  .repeat({
-    column: ['fecha_hora'],
-    row: ['temp','fr','fc','tas','tad','so2']
-  })
-  .columns(3);
+  const details = function(variable) {
+    return vl.markLine()
+    .encode(
+      vl.x().fieldQ('fecha_hora').type("temporal"),
+      vl.y().fieldQ(variable),
+      vl.color().if(hover, vl.fieldO('news2')).value('grey'),
+      vl.opacity().if(hover, vl.value(0.8)).value(0.1)
+    );
+  }
+
+  detailsChart1 = vl.hconcat(details('temp'), details('fr'), details('fc'));
+  detailsChart2 = vl.hconcat(details('tas'), details('tad'), details('so2'));
 
   chartSpec = vl
     .data(data)
-    .vconcat(line, details1)
+    .vconcat(line, detailsChart1, detailsChart2)
     // .width(600)
     // .height(600)
     .toJSON();
