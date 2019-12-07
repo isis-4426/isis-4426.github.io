@@ -5,7 +5,7 @@ const inputCategory = new Map();
 const inputIngreso = new Map();
 
 async function loadData() {
-  data = await d3.csv("csv/tp3.csv", d3.autoType);
+  data = await d3.csv("../csv/tp3.csv", d3.autoType);
   loadList();
   draw(data);
 }
