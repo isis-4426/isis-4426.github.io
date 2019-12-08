@@ -4,8 +4,8 @@ async function drawScatter() {
 
   const dataset = await d3.csv("./../data/tp1.csv")
 
-  console.log(dataset)
-  console.table(dataset[0])
+  //console.log(dataset)
+  //console.table(dataset[0])
 
   // set data constants
   const xAccessor = d=>+d.TAS
