@@ -123,12 +123,12 @@ async function drawBars() {
   }
 
   const metrics = [
-    "FR",
-    "FC",
-    "Temp",
-    "TAS",
-    "SO2",
-    "TAD",
+    "FrecuenciaRespiratoria",
+    "FrecuenciaCardiaca",
+    "Temperatura",
+    "TensionArterialSistolica",
+    "SaturacionDeOxigeno",
+    "TensionArterialDistolica",
     ]
 
   metrics.forEach(drawHistogram)

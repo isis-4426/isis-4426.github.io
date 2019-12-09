@@ -8,7 +8,7 @@ async function drawScatter() {
   //console.table(dataset[0])
 
   // set data constants
-  const xAccessor = d=>+d.SO2
+  const xAccessor = d=>+d.SaturacionDeOxigeno
   const yAccessor = d=>+d.NEWS2
   const numIAccessor = d=>+d.NumI
   const colorScaleYear = 2000
