@@ -1,0 +1,2373 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.1110.1722                               -->
+<workbook original-version='18.1' source-build='2019.3.2 (20193.19.1110.1722)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='SignosAlertasTempranas+ (Multiple Connections)' inline='true' name='federated.1fap2e30rfrfkd13oy38m0jay1x3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='AlertasTempr_2019 Trimestre' name='excel-direct.0xyoi2d0taiv1p1flrczb0qlrr9p'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/AlertasTempr_2019 Trimestre.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='EstudioAlertas_2019-10-04-13-52-05' name='excel-direct.07wgts41b3zjgn1d8xsbl0hg45yo'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/EstudioAlertas_2019-10-04-13-52-05.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[SignosAlertasTempranas].[Ingreso]' />
+              <expression op='[Registros Signos].[INGRESO]' />
+            </expression>
+          </clause>
+          <relation connection='excel-direct.0xyoi2d0taiv1p1flrczb0qlrr9p' name='SignosAlertasTempranas' table='[SignosAlertasTempranas$]' type='table'>
+            <columns gridOrigin='A1:AC10001:no:A1:AC10001:0' header='yes' outcome='2'>
+              <column datatype='string' name='Consec' ordinal='0' />
+              <column datatype='string' name='Tipo ID' ordinal='1' />
+              <column datatype='string' name='Núm ID' ordinal='2' />
+              <column datatype='string' name='Ingreso' ordinal='3' />
+              <column datatype='string' name='Sección' ordinal='4' />
+              <column datatype='string' name='Habitación' ordinal='5' />
+              <column datatype='string' name='Val Núm' ordinal='6' />
+              <column datatype='string' name='Fecha' ordinal='7' />
+              <column datatype='string' name='Hora' ordinal='8' />
+              <column datatype='string' name='Estado' ordinal='9' />
+              <column datatype='string' name='Temp' ordinal='10' />
+              <column datatype='string' name='FR' ordinal='11' />
+              <column datatype='string' name='FC' ordinal='12' />
+              <column datatype='string' name='TAS' ordinal='13' />
+              <column datatype='string' name='TAD' ordinal='14' />
+              <column datatype='string' name='SO2' ordinal='15' />
+              <column datatype='string' name='O2 Supl' ordinal='16' />
+              <column datatype='string' name='Nivel Conc' ordinal='17' />
+              <column datatype='string' name='Clasificación' ordinal='18' />
+              <column datatype='string' name='Edad' ordinal='19' />
+              <column datatype='string' name='NEWS2' ordinal='20' />
+              <column datatype='string' name='Fecha llegada ERR' ordinal='21' />
+              <column datatype='string' name='Hora llegada ERR' ordinal='22' />
+              <column datatype='string' name='Equipo' ordinal='23' />
+              <column datatype='string' name='Observación' ordinal='24' />
+              <column datatype='string' name='Conducta a seguir' ordinal='25' />
+              <column datatype='string' name='Fecha Conducta' ordinal='26' />
+              <column datatype='string' name='Hora conducta' ordinal='27' />
+              <column datatype='integer' name='Tiempo Rta (min)' ordinal='28' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.07wgts41b3zjgn1d8xsbl0hg45yo' name='Registros Signos' table='[&apos;Registros Signos$&apos;]' type='table'>
+            <columns gridOrigin='A1:BR354:no:A1:BR354:0' header='yes' outcome='2'>
+              <column datatype='string' name='INGRESO' ordinal='0' />
+              <column datatype='string' name='SEXO' ordinal='1' />
+              <column datatype='string' name='FECHA_NAC' ordinal='2' />
+              <column datatype='integer' name='EDAD_A' ordinal='3' />
+              <column datatype='integer' name='EDAD_M' ordinal='4' />
+              <column datatype='integer' name='EDAD_D' ordinal='5' />
+              <column datatype='string' name='LUGAR_NAC' ordinal='6' />
+              <column datatype='string' name='LUGAR_RES' ordinal='7' />
+              <column datatype='string' name='PESO' ordinal='8' />
+              <column datatype='string' name='PESO_UD' ordinal='9' />
+              <column datatype='string' name='TALLA' ordinal='10' />
+              <column datatype='string' name='TALLA_UD' ordinal='11' />
+              <column datatype='string' name='ANTEC_CLINICOS' ordinal='12' />
+              <column datatype='string' name='DX_PRINCIPAL' ordinal='13' />
+              <column datatype='string' name='DX_PRINCIPAL_DSC' ordinal='14' />
+              <column datatype='string' name='DX_RELACION1' ordinal='15' />
+              <column datatype='string' name='DX_RELACION1_DSC' ordinal='16' />
+              <column datatype='string' name='DX_RELACION2' ordinal='17' />
+              <column datatype='string' name='DX_RELACION2_DSC' ordinal='18' />
+              <column datatype='string' name='DX_RELACION3' ordinal='19' />
+              <column datatype='string' name='DX_RELACION3_DSC' ordinal='20' />
+              <column datatype='string' name='DX_RELACION4' ordinal='21' />
+              <column datatype='string' name='DX_RELACION4_DSC' ordinal='22' />
+              <column datatype='string' name='DX_RELACION5' ordinal='23' />
+              <column datatype='string' name='DX_RELACION5_DSC' ordinal='24' />
+              <column datatype='string' name='FECHA_INGRESO' ordinal='25' />
+              <column datatype='string' name='FECHA_EGRESO' ordinal='26' />
+              <column datatype='integer' name='DIAS_ESTANCIA' ordinal='27' />
+              <column datatype='string' name='PA_FECHA' ordinal='28' />
+              <column datatype='integer' name='PA_DIAS' ordinal='29' />
+              <column datatype='string' name='PA_SECCION' ordinal='30' />
+              <column datatype='string' name='PA_FC' ordinal='31' />
+              <column datatype='string' name='PA_FR' ordinal='32' />
+              <column datatype='string' name='PA_SO2' ordinal='33' />
+              <column datatype='string' name='PA_O2_SUPL' ordinal='34' />
+              <column datatype='string' name='PA_PAS' ordinal='35' />
+              <column datatype='string' name='PA_PAD' ordinal='36' />
+              <column datatype='string' name='PA_TEMP' ordinal='37' />
+              <column datatype='integer' name='PA_NIVEL_CONC' ordinal='38' />
+              <column datatype='string' name='PA_NIVEL_CONC_DSC' ordinal='39' />
+              <column datatype='string' name='PA_CLASIFICA' ordinal='40' />
+              <column datatype='string' name='PA_NEWS2' ordinal='41' />
+              <column datatype='string' name='PA_FECHA_LLEGADA' ordinal='42' />
+              <column datatype='integer' name='PA_MINUTOS_LLEGADA' ordinal='43' />
+              <column datatype='string' name='PA_FECHA_RTA' ordinal='44' />
+              <column datatype='integer' name='PA_MINUTOS_RTA' ordinal='45' />
+              <column datatype='string' name='PA_EQUIPO' ordinal='46' />
+              <column datatype='string' name='PA_OBSERVACION' ordinal='47' />
+              <column datatype='string' name='PA_CONDUCTA' ordinal='48' />
+              <column datatype='string' name='MP_FECHA' ordinal='49' />
+              <column datatype='integer' name='MP_DIAS' ordinal='50' />
+              <column datatype='string' name='MP_SECCION' ordinal='51' />
+              <column datatype='string' name='MP_FC' ordinal='52' />
+              <column datatype='string' name='MP_FR' ordinal='53' />
+              <column datatype='string' name='MP_SO2' ordinal='54' />
+              <column datatype='string' name='MP_O2_SUPL' ordinal='55' />
+              <column datatype='string' name='MP_PAS' ordinal='56' />
+              <column datatype='string' name='MP_PAD' ordinal='57' />
+              <column datatype='string' name='MP_TEMP' ordinal='58' />
+              <column datatype='integer' name='MP_NIVEL_CONC' ordinal='59' />
+              <column datatype='string' name='MP_NIVEL_CONC_DSC' ordinal='60' />
+              <column datatype='string' name='MP_CLASIFICA' ordinal='61' />
+              <column datatype='string' name='MP_NEWS2' ordinal='62' />
+              <column datatype='string' name='MP_FECHA_LLEGADA' ordinal='63' />
+              <column datatype='integer' name='MP_MINUTOS_LLEGADA' ordinal='64' />
+              <column datatype='string' name='MP_FECHA_RTA' ordinal='65' />
+              <column datatype='integer' name='MP_MINUTOS_RTA' ordinal='66' />
+              <column datatype='string' name='MP_EQUIPO' ordinal='67' />
+              <column datatype='string' name='MP_OBSERVACION' ordinal='68' />
+              <column datatype='string' name='MP_CONDUCTA' ordinal='69' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Consec</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Consec]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Consec</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tipo ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Tipo ID]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Tipo ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Núm ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Núm ID]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Núm ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ingreso</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Ingreso]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Ingreso</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sección</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Sección]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Sección</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Habitación</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Habitación]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Habitación</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Val Núm</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Val Núm]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Val Núm</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fecha</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fecha]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Fecha</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hora</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Hora]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Hora</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Estado</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Estado]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Estado</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Temp</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Temp]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Temp</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FR</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FR]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>FR</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FC]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>FC</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TAS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TAS]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>TAS</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TAD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TAD]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>TAD</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SO2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SO2]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>SO2</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>O2 Supl</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[O2 Supl]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>O2 Supl</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nivel Conc</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Nivel Conc]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Nivel Conc</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Clasificación</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Clasificación]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Clasificación</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Edad</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Edad]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Edad</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NEWS2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NEWS2]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>NEWS2</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fecha llegada ERR</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fecha llegada ERR]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Fecha llegada ERR</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hora llegada ERR</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Hora llegada ERR]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Hora llegada ERR</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Equipo</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Equipo]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Equipo</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Observación</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Observación]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Observación</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Conducta a seguir</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Conducta a seguir]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Conducta a seguir</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fecha Conducta</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fecha Conducta]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Fecha Conducta</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hora conducta</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Hora conducta]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Hora conducta</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tiempo Rta (min)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Tiempo Rta (min)]</local-name>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias>Tiempo Rta (min)</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SignosAlertasTempranas]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:AC10001:no:A1:AC10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INGRESO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[INGRESO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>INGRESO</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEXO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SEXO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>SEXO</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_NAC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FECHA_NAC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>FECHA_NAC</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDAD_A</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EDAD_A]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>EDAD_A</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDAD_M</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EDAD_M]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>EDAD_M</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDAD_D</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EDAD_D]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>EDAD_D</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LUGAR_NAC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LUGAR_NAC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>LUGAR_NAC</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LUGAR_RES</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LUGAR_RES]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>LUGAR_RES</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PESO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PESO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PESO</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PESO_UD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PESO_UD]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PESO_UD</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TALLA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TALLA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>TALLA</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TALLA_UD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TALLA_UD]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>TALLA_UD</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ANTEC_CLINICOS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ANTEC_CLINICOS]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>ANTEC_CLINICOS</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_PRINCIPAL</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_PRINCIPAL]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_PRINCIPAL</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_PRINCIPAL_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_PRINCIPAL_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_PRINCIPAL_DSC</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION1]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION1</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION1_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION1_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION1_DSC</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION2]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION2</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION2_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION2_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION2_DSC</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION3</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION3]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION3</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION3_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION3_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION3_DSC</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION4</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION4]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION4</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION4_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION4_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION4_DSC</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION5</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION5]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION5</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DX_RELACION5_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DX_RELACION5_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DX_RELACION5_DSC</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_INGRESO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FECHA_INGRESO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>FECHA_INGRESO</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FECHA_EGRESO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FECHA_EGRESO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>FECHA_EGRESO</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DIAS_ESTANCIA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DIAS_ESTANCIA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>DIAS_ESTANCIA</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_FECHA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_FECHA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_FECHA</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_DIAS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PA_DIAS]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_DIAS</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_SECCION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_SECCION]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_SECCION</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_FC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_FC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_FC</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_FR</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_FR]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_FR</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_SO2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_SO2]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_SO2</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_O2_SUPL</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_O2_SUPL]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_O2_SUPL</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_PAS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_PAS]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_PAS</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_PAD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_PAD]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_PAD</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_TEMP</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_TEMP]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_TEMP</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_NIVEL_CONC</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PA_NIVEL_CONC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_NIVEL_CONC</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_NIVEL_CONC_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_NIVEL_CONC_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_NIVEL_CONC_DSC</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_CLASIFICA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_CLASIFICA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_CLASIFICA</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_NEWS2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_NEWS2]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_NEWS2</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_FECHA_LLEGADA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_FECHA_LLEGADA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_FECHA_LLEGADA</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_MINUTOS_LLEGADA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PA_MINUTOS_LLEGADA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_MINUTOS_LLEGADA</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_FECHA_RTA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_FECHA_RTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_FECHA_RTA</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_MINUTOS_RTA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PA_MINUTOS_RTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_MINUTOS_RTA</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_EQUIPO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_EQUIPO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_EQUIPO</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_OBSERVACION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_OBSERVACION]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_OBSERVACION</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PA_CONDUCTA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PA_CONDUCTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>PA_CONDUCTA</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_FECHA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_FECHA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_FECHA</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_DIAS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MP_DIAS]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_DIAS</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_SECCION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_SECCION]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_SECCION</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_FC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_FC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_FC</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_FR</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_FR]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_FR</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_SO2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_SO2]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_SO2</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_O2_SUPL</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_O2_SUPL]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_O2_SUPL</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_PAS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_PAS]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_PAS</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_PAD</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_PAD]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_PAD</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_TEMP</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_TEMP]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_TEMP</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_NIVEL_CONC</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MP_NIVEL_CONC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_NIVEL_CONC</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_NIVEL_CONC_DSC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_NIVEL_CONC_DSC]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_NIVEL_CONC_DSC</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_CLASIFICA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_CLASIFICA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_CLASIFICA</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_NEWS2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_NEWS2]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_NEWS2</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_FECHA_LLEGADA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_FECHA_LLEGADA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_FECHA_LLEGADA</remote-alias>
+            <ordinal>92</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_MINUTOS_LLEGADA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MP_MINUTOS_LLEGADA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_MINUTOS_LLEGADA</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_FECHA_RTA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_FECHA_RTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_FECHA_RTA</remote-alias>
+            <ordinal>94</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_MINUTOS_RTA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MP_MINUTOS_RTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_MINUTOS_RTA</remote-alias>
+            <ordinal>95</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_EQUIPO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_EQUIPO]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_EQUIPO</remote-alias>
+            <ordinal>96</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_OBSERVACION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_OBSERVACION]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_OBSERVACION</remote-alias>
+            <ordinal>97</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MP_CONDUCTA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MP_CONDUCTA]</local-name>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias>MP_CONDUCTA</remote-alias>
+            <ordinal>98</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Registros Signos]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:BR354:no:A1:BR354:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Antec Clinicos' datatype='string' name='[ANTEC_CLINICOS]' role='dimension' type='nominal' />
+      <column caption='Dias Estancia' datatype='integer' name='[DIAS_ESTANCIA]' role='measure' type='quantitative' />
+      <column caption='Dx Principal' datatype='string' name='[DX_PRINCIPAL]' role='dimension' type='nominal' />
+      <column caption='Dx Principal Dsc' datatype='string' name='[DX_PRINCIPAL_DSC]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion1' datatype='string' name='[DX_RELACION1]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion1 Dsc' datatype='string' name='[DX_RELACION1_DSC]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion2' datatype='string' name='[DX_RELACION2]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion2 Dsc' datatype='string' name='[DX_RELACION2_DSC]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion3' datatype='string' name='[DX_RELACION3]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion3 Dsc' datatype='string' name='[DX_RELACION3_DSC]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion4' datatype='string' name='[DX_RELACION4]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion4 Dsc' datatype='string' name='[DX_RELACION4_DSC]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion5' datatype='string' name='[DX_RELACION5]' role='dimension' type='nominal' />
+      <column caption='Dx Relacion5 Dsc' datatype='string' name='[DX_RELACION5_DSC]' role='dimension' type='nominal' />
+      <column caption='Edad A' datatype='integer' name='[EDAD_A]' role='measure' type='quantitative' />
+      <column caption='Edad D' datatype='integer' name='[EDAD_D]' role='measure' type='quantitative' />
+      <column caption='Edad M' datatype='integer' name='[EDAD_M]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Estado]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Fecha Egreso' datatype='string' name='[FECHA_EGRESO]' role='dimension' type='nominal' />
+      <column caption='Fecha Ingreso' datatype='string' name='[FECHA_INGRESO]' role='dimension' type='nominal' />
+      <column caption='Fecha Nac' datatype='string' name='[FECHA_NAC]' role='dimension' type='nominal' />
+      <column caption='Ingreso1' datatype='string' name='[INGRESO]' role='dimension' type='nominal' />
+      <column caption='Lugar Nac' datatype='string' name='[LUGAR_NAC]' role='dimension' type='nominal' />
+      <column caption='Lugar Res' datatype='string' name='[LUGAR_RES]' role='dimension' type='nominal' />
+      <column caption='Mp Clasifica' datatype='string' name='[MP_CLASIFICA]' role='dimension' type='nominal' />
+      <column caption='Mp Conducta' datatype='string' name='[MP_CONDUCTA]' role='dimension' type='nominal' />
+      <column caption='Mp Dias' datatype='integer' name='[MP_DIAS]' role='measure' type='quantitative' />
+      <column caption='Mp Equipo' datatype='string' name='[MP_EQUIPO]' role='dimension' type='nominal' />
+      <column caption='Mp Fc' datatype='string' name='[MP_FC]' role='dimension' type='nominal' />
+      <column caption='Mp Fecha' datatype='string' name='[MP_FECHA]' role='dimension' type='nominal' />
+      <column caption='Mp Fecha Llegada' datatype='string' name='[MP_FECHA_LLEGADA]' role='dimension' type='nominal' />
+      <column caption='Mp Fecha Rta' datatype='string' name='[MP_FECHA_RTA]' role='dimension' type='nominal' />
+      <column caption='Mp Fr' datatype='string' name='[MP_FR]' role='dimension' type='nominal' />
+      <column caption='Mp Minutos Llegada' datatype='integer' name='[MP_MINUTOS_LLEGADA]' role='measure' type='quantitative' />
+      <column caption='Mp Minutos Rta' datatype='integer' name='[MP_MINUTOS_RTA]' role='measure' type='quantitative' />
+      <column caption='Mp News2' datatype='string' name='[MP_NEWS2]' role='dimension' type='nominal' />
+      <column caption='Mp Nivel Conc' datatype='integer' name='[MP_NIVEL_CONC]' role='measure' type='quantitative' />
+      <column caption='Mp Nivel Conc Dsc' datatype='string' name='[MP_NIVEL_CONC_DSC]' role='dimension' type='nominal' />
+      <column caption='Mp O2 Supl' datatype='string' name='[MP_O2_SUPL]' role='dimension' type='nominal' />
+      <column caption='Mp Observacion' datatype='string' name='[MP_OBSERVACION]' role='dimension' type='nominal' />
+      <column caption='Mp Pad' datatype='string' name='[MP_PAD]' role='dimension' type='nominal' />
+      <column caption='Mp Pas' datatype='string' name='[MP_PAS]' role='dimension' type='nominal' />
+      <column caption='Mp Seccion' datatype='string' name='[MP_SECCION]' role='dimension' type='nominal' />
+      <column caption='Mp So2' datatype='string' name='[MP_SO2]' role='dimension' type='nominal' />
+      <column caption='Mp Temp' datatype='string' name='[MP_TEMP]' role='dimension' type='nominal' />
+      <column caption='News2' datatype='string' name='[NEWS2]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Pa Clasifica' datatype='string' name='[PA_CLASIFICA]' role='dimension' type='nominal' />
+      <column caption='Pa Conducta' datatype='string' name='[PA_CONDUCTA]' role='dimension' type='nominal' />
+      <column caption='Pa Dias' datatype='integer' name='[PA_DIAS]' role='measure' type='quantitative' />
+      <column caption='Pa Equipo' datatype='string' name='[PA_EQUIPO]' role='dimension' type='nominal' />
+      <column caption='Pa Fc' datatype='string' name='[PA_FC]' role='dimension' type='nominal' />
+      <column caption='Pa Fecha' datatype='string' name='[PA_FECHA]' role='dimension' type='nominal' />
+      <column caption='Pa Fecha Llegada' datatype='string' name='[PA_FECHA_LLEGADA]' role='dimension' type='nominal' />
+      <column caption='Pa Fecha Rta' datatype='string' name='[PA_FECHA_RTA]' role='dimension' type='nominal' />
+      <column caption='Pa Fr' datatype='string' name='[PA_FR]' role='dimension' type='nominal' />
+      <column caption='Pa Minutos Llegada' datatype='integer' name='[PA_MINUTOS_LLEGADA]' role='measure' type='quantitative' />
+      <column caption='Pa Minutos Rta' datatype='integer' name='[PA_MINUTOS_RTA]' role='measure' type='quantitative' />
+      <column caption='Pa News2' datatype='string' name='[PA_NEWS2]' role='dimension' type='nominal' />
+      <column caption='Pa Nivel Conc' datatype='integer' name='[PA_NIVEL_CONC]' role='measure' type='quantitative' />
+      <column caption='Pa Nivel Conc Dsc' datatype='string' name='[PA_NIVEL_CONC_DSC]' role='dimension' type='nominal' />
+      <column caption='Pa O2 Supl' datatype='string' name='[PA_O2_SUPL]' role='dimension' type='nominal' />
+      <column caption='Pa Observacion' datatype='string' name='[PA_OBSERVACION]' role='dimension' type='nominal' />
+      <column caption='Pa Pad' datatype='string' name='[PA_PAD]' role='dimension' type='nominal' />
+      <column caption='Pa Pas' datatype='string' name='[PA_PAS]' role='dimension' type='nominal' />
+      <column caption='Pa Seccion' datatype='string' name='[PA_SECCION]' role='dimension' type='nominal' />
+      <column caption='Pa So2' datatype='string' name='[PA_SO2]' role='dimension' type='nominal' />
+      <column caption='Pa Temp' datatype='string' name='[PA_TEMP]' role='dimension' type='nominal' />
+      <column caption='Peso' datatype='string' name='[PESO]' role='dimension' type='nominal' />
+      <column caption='Peso Ud' datatype='string' name='[PESO_UD]' role='dimension' type='nominal' />
+      <column caption='Sexo' datatype='string' name='[SEXO]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Sección]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='%null%' value='Otros' />
+          <alias key='&quot;UM - Urg-observac.mujeres-pos&quot;' value='UM - Urgencias Mujeres POS' />
+        </aliases>
+      </column>
+      <column caption='Talla' datatype='string' name='[TALLA]' role='dimension' type='nominal' />
+      <column caption='Talla Ud' datatype='string' name='[TALLA_UD]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.539704' measure-ordering='alphabetic' measure-percentage='0.460296' show-aliased-fields='true' show-structure='true' user-set-layout='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Diagnóstico vs Secciones'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Diagnóstico principal en las secciones de la Clínca</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SignosAlertasTempranas+ (Multiple Connections)' name='federated.1fap2e30rfrfkd13oy38m0jay1x3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fap2e30rfrfkd13oy38m0jay1x3'>
+            <column caption='Dx Principal' datatype='string' name='[DX_PRINCIPAL]' role='dimension' type='nominal' />
+            <column caption='Dx Principal Dsc' datatype='string' name='[DX_PRINCIPAL_DSC]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Fecha]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column datatype='string' name='[Sección]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='%null%' value='Otros' />
+                <alias key='&quot;UM - Urg-observac.mujeres-pos&quot;' value='UM - Urgencias Mujeres POS' />
+              </aliases>
+            </column>
+            <column-instance column='[DX_PRINCIPAL]' derivation='None' name='[none:DX_PRINCIPAL:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DX_PRINCIPAL_DSC]' derivation='None' name='[none:DX_PRINCIPAL_DSC:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Fecha]' derivation='None' name='[none:Fecha:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sección]' derivation='None' name='[none:Sección:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <alphabetic-sort column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:DX_PRINCIPAL:nk]' direction='ASC' />
+          <filter class='categorical' column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Fecha:nk]'>
+            <groupfilter function='level-members' level='[none:Fecha:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Sección:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;1A - Primero Central A&quot;</bucket>
+              <bucket>&quot;1B - Primero Central B&quot;</bucket>
+              <bucket>&quot;1D - Primero Central D&quot;</bucket>
+              <bucket>&quot;1S - Primero Sur&quot;</bucket>
+              <bucket>&quot;2B - Segundo Central B&quot;</bucket>
+              <bucket>&quot;2N - Segundo Norte&quot;</bucket>
+              <bucket>&quot;2S - Segundo Sur&quot;</bucket>
+              <bucket>&quot;3P - Tercer Piso&quot;</bucket>
+              <bucket>&quot;4P - Cuarto Piso&quot;</bucket>
+              <bucket>&quot;CI - Cuidados Intensivos&quot;</bucket>
+              <bucket>&quot;UM - Urg-observac.mujeres-pos&quot;</bucket>
+              <bucket>%null%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Fecha:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[sum:Number of Records:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[sum:Number of Records:qk]' value='Cantidad de ingresos'>
+              <formatted-text>
+                <run>Cantidad de ingresos</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[sum:Number of Records:qk]' />
+              <lod column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:DX_PRINCIPAL_DSC:nk]' />
+              <text column='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[sum:Number of Records:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:DX_PRINCIPAL:nk]</rows>
+        <cols>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Sección:nk]</cols>
+      </table>
+      <simple-id uuid='{5E030346-5FED-4AE6-B44D-6B2D3FC64E45}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Diagnóstico vs Secciones'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fap2e30rfrfkd13oy38m0jay1x3].[sum:Number of Records:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:DX_PRINCIPAL:nk]</field>
+            <field>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:DX_PRINCIPAL_DSC:nk]</field>
+            <field>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Fecha:nk]</field>
+            <field>[federated.1fap2e30rfrfkd13oy38m0jay1x3].[none:Sección:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E42985A9-32AC-474F-BBDE-5369736CD742}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Diagnóstico vs Secciones' width='384'>
+      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
+      FkIIL/X/aEUKze3eS9MAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
