@@ -10,6 +10,7 @@ async function drawScatter() {
   // set data constants
   const xAccessor = d=>+d.FC
   const yAccessor = d=>+d.NEWS2
+  const numIAccessor = d=>+d.NumI
   const colorScaleYear = 2000
   const parseDate = d3.timeParse("%Y-%m-%d")
   const colorAccessor = d => parseDate(d.Fecha).setYear(colorScaleYear)
@@ -307,6 +308,8 @@ async function drawScatter() {
 
     tooltip.select("#fc")
         .text(formatTemperature(xAccessor(datum)))
+    tooltip.select("#numI-fc")
+        .text(formatTemperature(numIAccessor(datum)))
 
     const dateParser = d3.timeParse("%Y-%m-%d")
     const formatDate = d3.timeFormat("%A, %B %-d, %Y")
