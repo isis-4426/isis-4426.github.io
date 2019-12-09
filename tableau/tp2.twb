@@ -16,10 +16,10 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='AlertasTempr_2019 Trimestre' name='excel-direct.0xyoi2d0taiv1p1flrczb0qlrr9p'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/AlertasTempr_2019 Trimestre.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/AlertasTempr_2019 Trimestre.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='EstudioAlertas_2019-10-04-13-52-05' name='excel-direct.07wgts41b3zjgn1d8xsbl0hg45yo'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/EstudioAlertas_2019-10-04-13-52-05.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/juanhernandez/Downloads/EstudioAlertas_2019-10-04-13-52-05.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <relation join='inner' type='join'>
@@ -137,6 +137,7 @@
             </columns>
           </relation>
         </relation>
+        <refresh increment-key='' incremental-updates='false' />
         <metadata-records>
           <metadata-record class='column'>
             <remote-name>Consec</remote-name>
@@ -1722,6 +1723,1490 @@
       </column>
       <column caption='Talla' datatype='string' name='[TALLA]' role='dimension' type='nominal' />
       <column caption='Talla Ud' datatype='string' name='[TALLA_UD]' role='dimension' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/juanhernandez/Documents/isis-4822/isis-4426.github.io/tableau/SignosAlertasTempranas+ (Multiple Connections).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='12/09/2019 04:06:41 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[ANTEC_CLINICOS]' value='[Extract].[ANTEC_CLINICOS]' />
+            <map key='[Clasificación]' value='[Extract].[Clasificación]' />
+            <map key='[Conducta a seguir]' value='[Extract].[Conducta a seguir]' />
+            <map key='[Consec]' value='[Extract].[Consec]' />
+            <map key='[DIAS_ESTANCIA]' value='[Extract].[DIAS_ESTANCIA]' />
+            <map key='[DX_PRINCIPAL]' value='[Extract].[DX_PRINCIPAL]' />
+            <map key='[DX_PRINCIPAL_DSC]' value='[Extract].[DX_PRINCIPAL_DSC]' />
+            <map key='[DX_RELACION1]' value='[Extract].[DX_RELACION1]' />
+            <map key='[DX_RELACION1_DSC]' value='[Extract].[DX_RELACION1_DSC]' />
+            <map key='[DX_RELACION2]' value='[Extract].[DX_RELACION2]' />
+            <map key='[DX_RELACION2_DSC]' value='[Extract].[DX_RELACION2_DSC]' />
+            <map key='[DX_RELACION3]' value='[Extract].[DX_RELACION3]' />
+            <map key='[DX_RELACION3_DSC]' value='[Extract].[DX_RELACION3_DSC]' />
+            <map key='[DX_RELACION4]' value='[Extract].[DX_RELACION4]' />
+            <map key='[DX_RELACION4_DSC]' value='[Extract].[DX_RELACION4_DSC]' />
+            <map key='[DX_RELACION5]' value='[Extract].[DX_RELACION5]' />
+            <map key='[DX_RELACION5_DSC]' value='[Extract].[DX_RELACION5_DSC]' />
+            <map key='[EDAD_A]' value='[Extract].[EDAD_A]' />
+            <map key='[EDAD_D]' value='[Extract].[EDAD_D]' />
+            <map key='[EDAD_M]' value='[Extract].[EDAD_M]' />
+            <map key='[Edad]' value='[Extract].[Edad]' />
+            <map key='[Equipo]' value='[Extract].[Equipo]' />
+            <map key='[Estado]' value='[Extract].[Estado]' />
+            <map key='[FC]' value='[Extract].[FC]' />
+            <map key='[FECHA_EGRESO]' value='[Extract].[FECHA_EGRESO]' />
+            <map key='[FECHA_INGRESO]' value='[Extract].[FECHA_INGRESO]' />
+            <map key='[FECHA_NAC]' value='[Extract].[FECHA_NAC]' />
+            <map key='[FR]' value='[Extract].[FR]' />
+            <map key='[Fecha Conducta]' value='[Extract].[Fecha Conducta]' />
+            <map key='[Fecha llegada ERR]' value='[Extract].[Fecha llegada ERR]' />
+            <map key='[Fecha]' value='[Extract].[Fecha]' />
+            <map key='[Habitación]' value='[Extract].[Habitación]' />
+            <map key='[Hora conducta]' value='[Extract].[Hora conducta]' />
+            <map key='[Hora llegada ERR]' value='[Extract].[Hora llegada ERR]' />
+            <map key='[Hora]' value='[Extract].[Hora]' />
+            <map key='[INGRESO]' value='[Extract].[INGRESO]' />
+            <map key='[Ingreso]' value='[Extract].[Ingreso1]' />
+            <map key='[LUGAR_NAC]' value='[Extract].[LUGAR_NAC]' />
+            <map key='[LUGAR_RES]' value='[Extract].[LUGAR_RES]' />
+            <map key='[MP_CLASIFICA]' value='[Extract].[MP_CLASIFICA]' />
+            <map key='[MP_CONDUCTA]' value='[Extract].[MP_CONDUCTA]' />
+            <map key='[MP_DIAS]' value='[Extract].[MP_DIAS]' />
+            <map key='[MP_EQUIPO]' value='[Extract].[MP_EQUIPO]' />
+            <map key='[MP_FC]' value='[Extract].[MP_FC]' />
+            <map key='[MP_FECHA]' value='[Extract].[MP_FECHA]' />
+            <map key='[MP_FECHA_LLEGADA]' value='[Extract].[MP_FECHA_LLEGADA]' />
+            <map key='[MP_FECHA_RTA]' value='[Extract].[MP_FECHA_RTA]' />
+            <map key='[MP_FR]' value='[Extract].[MP_FR]' />
+            <map key='[MP_MINUTOS_LLEGADA]' value='[Extract].[MP_MINUTOS_LLEGADA]' />
+            <map key='[MP_MINUTOS_RTA]' value='[Extract].[MP_MINUTOS_RTA]' />
+            <map key='[MP_NEWS2]' value='[Extract].[MP_NEWS2]' />
+            <map key='[MP_NIVEL_CONC]' value='[Extract].[MP_NIVEL_CONC]' />
+            <map key='[MP_NIVEL_CONC_DSC]' value='[Extract].[MP_NIVEL_CONC_DSC]' />
+            <map key='[MP_O2_SUPL]' value='[Extract].[MP_O2_SUPL]' />
+            <map key='[MP_OBSERVACION]' value='[Extract].[MP_OBSERVACION]' />
+            <map key='[MP_PAD]' value='[Extract].[MP_PAD]' />
+            <map key='[MP_PAS]' value='[Extract].[MP_PAS]' />
+            <map key='[MP_SECCION]' value='[Extract].[MP_SECCION]' />
+            <map key='[MP_SO2]' value='[Extract].[MP_SO2]' />
+            <map key='[MP_TEMP]' value='[Extract].[MP_TEMP]' />
+            <map key='[NEWS2]' value='[Extract].[NEWS2]' />
+            <map key='[Nivel Conc]' value='[Extract].[Nivel Conc]' />
+            <map key='[Núm ID]' value='[Extract].[Núm ID]' />
+            <map key='[O2 Supl]' value='[Extract].[O2 Supl]' />
+            <map key='[Observación]' value='[Extract].[Observación]' />
+            <map key='[PA_CLASIFICA]' value='[Extract].[PA_CLASIFICA]' />
+            <map key='[PA_CONDUCTA]' value='[Extract].[PA_CONDUCTA]' />
+            <map key='[PA_DIAS]' value='[Extract].[PA_DIAS]' />
+            <map key='[PA_EQUIPO]' value='[Extract].[PA_EQUIPO]' />
+            <map key='[PA_FC]' value='[Extract].[PA_FC]' />
+            <map key='[PA_FECHA]' value='[Extract].[PA_FECHA]' />
+            <map key='[PA_FECHA_LLEGADA]' value='[Extract].[PA_FECHA_LLEGADA]' />
+            <map key='[PA_FECHA_RTA]' value='[Extract].[PA_FECHA_RTA]' />
+            <map key='[PA_FR]' value='[Extract].[PA_FR]' />
+            <map key='[PA_MINUTOS_LLEGADA]' value='[Extract].[PA_MINUTOS_LLEGADA]' />
+            <map key='[PA_MINUTOS_RTA]' value='[Extract].[PA_MINUTOS_RTA]' />
+            <map key='[PA_NEWS2]' value='[Extract].[PA_NEWS2]' />
+            <map key='[PA_NIVEL_CONC]' value='[Extract].[PA_NIVEL_CONC]' />
+            <map key='[PA_NIVEL_CONC_DSC]' value='[Extract].[PA_NIVEL_CONC_DSC]' />
+            <map key='[PA_O2_SUPL]' value='[Extract].[PA_O2_SUPL]' />
+            <map key='[PA_OBSERVACION]' value='[Extract].[PA_OBSERVACION]' />
+            <map key='[PA_PAD]' value='[Extract].[PA_PAD]' />
+            <map key='[PA_PAS]' value='[Extract].[PA_PAS]' />
+            <map key='[PA_SECCION]' value='[Extract].[PA_SECCION]' />
+            <map key='[PA_SO2]' value='[Extract].[PA_SO2]' />
+            <map key='[PA_TEMP]' value='[Extract].[PA_TEMP]' />
+            <map key='[PESO]' value='[Extract].[PESO]' />
+            <map key='[PESO_UD]' value='[Extract].[PESO_UD]' />
+            <map key='[SEXO]' value='[Extract].[SEXO]' />
+            <map key='[SO2]' value='[Extract].[SO2]' />
+            <map key='[Sección]' value='[Extract].[Sección]' />
+            <map key='[TAD]' value='[Extract].[TAD]' />
+            <map key='[TALLA]' value='[Extract].[TALLA]' />
+            <map key='[TALLA_UD]' value='[Extract].[TALLA_UD]' />
+            <map key='[TAS]' value='[Extract].[TAS]' />
+            <map key='[Temp]' value='[Extract].[Temp]' />
+            <map key='[Tiempo Rta (min)]' value='[Extract].[Tiempo Rta (min)]' />
+            <map key='[Tipo ID]' value='[Extract].[Tipo ID]' />
+            <map key='[Val Núm]' value='[Extract].[Val Núm]' />
+          </cols>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='SignosAlertasTempranas+ (Multiple Connections)' increment-value='%null%' refresh-type='create' rows-inserted='1204' timestamp-start='2019-12-09 04:06:41.664' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Consec</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Consec]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Consec</remote-alias>
+              <ordinal>0</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1204</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Tipo ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Tipo ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Tipo ID</remote-alias>
+              <ordinal>1</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Núm ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Núm ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Núm ID</remote-alias>
+              <ordinal>2</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Ingreso1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Ingreso]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Ingreso1</remote-alias>
+              <ordinal>3</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sección</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Sección]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sección</remote-alias>
+              <ordinal>4</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Habitación</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Habitación]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Habitación</remote-alias>
+              <ordinal>5</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Val Núm</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Val Núm]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Val Núm</remote-alias>
+              <ordinal>6</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>308</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Fecha</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Fecha]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Fecha</remote-alias>
+              <ordinal>7</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>86</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hora</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hora]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hora</remote-alias>
+              <ordinal>8</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1120</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Estado</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Estado]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Estado</remote-alias>
+              <ordinal>9</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Temp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Temp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Temp</remote-alias>
+              <ordinal>10</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[FR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FR</remote-alias>
+              <ordinal>11</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[FC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FC</remote-alias>
+              <ordinal>12</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>79</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TAS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TAS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TAS</remote-alias>
+              <ordinal>13</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>121</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TAD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TAD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TAD</remote-alias>
+              <ordinal>14</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>87</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SO2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SO2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SO2</remote-alias>
+              <ordinal>15</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>O2 Supl</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[O2 Supl]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>O2 Supl</remote-alias>
+              <ordinal>16</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Nivel Conc</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Nivel Conc]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Nivel Conc</remote-alias>
+              <ordinal>17</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Clasificación</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Clasificación]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Clasificación</remote-alias>
+              <ordinal>18</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Edad</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Edad]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Edad</remote-alias>
+              <ordinal>19</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NEWS2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NEWS2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>NEWS2</remote-alias>
+              <ordinal>20</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Fecha llegada ERR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Fecha llegada ERR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Fecha llegada ERR</remote-alias>
+              <ordinal>21</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hora llegada ERR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hora llegada ERR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hora llegada ERR</remote-alias>
+              <ordinal>22</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Equipo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Equipo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Equipo</remote-alias>
+              <ordinal>23</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Observación</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Observación]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Observación</remote-alias>
+              <ordinal>24</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>253</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Conducta a seguir</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Conducta a seguir]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Conducta a seguir</remote-alias>
+              <ordinal>25</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Fecha Conducta</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Fecha Conducta]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Fecha Conducta</remote-alias>
+              <ordinal>26</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>35</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hora conducta</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hora conducta]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hora conducta</remote-alias>
+              <ordinal>27</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>429</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Tiempo Rta (min)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Tiempo Rta (min)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Tiempo Rta (min)</remote-alias>
+              <ordinal>28</ordinal>
+              <family>SignosAlertasTempranas</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>INGRESO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[INGRESO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>INGRESO</remote-alias>
+              <ordinal>29</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEXO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SEXO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEXO</remote-alias>
+              <ordinal>30</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FECHA_NAC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[FECHA_NAC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FECHA_NAC</remote-alias>
+              <ordinal>31</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDAD_A</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[EDAD_A]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDAD_A</remote-alias>
+              <ordinal>32</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDAD_M</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[EDAD_M]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDAD_M</remote-alias>
+              <ordinal>33</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDAD_D</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[EDAD_D]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDAD_D</remote-alias>
+              <ordinal>34</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LUGAR_NAC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[LUGAR_NAC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LUGAR_NAC</remote-alias>
+              <ordinal>35</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LUGAR_RES</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[LUGAR_RES]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LUGAR_RES</remote-alias>
+              <ordinal>36</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PESO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PESO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PESO</remote-alias>
+              <ordinal>37</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PESO_UD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PESO_UD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PESO_UD</remote-alias>
+              <ordinal>38</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TALLA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TALLA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TALLA</remote-alias>
+              <ordinal>39</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TALLA_UD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TALLA_UD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TALLA_UD</remote-alias>
+              <ordinal>40</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ANTEC_CLINICOS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ANTEC_CLINICOS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ANTEC_CLINICOS</remote-alias>
+              <ordinal>41</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_PRINCIPAL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_PRINCIPAL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_PRINCIPAL</remote-alias>
+              <ordinal>42</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_PRINCIPAL_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_PRINCIPAL_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_PRINCIPAL_DSC</remote-alias>
+              <ordinal>43</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION1</remote-alias>
+              <ordinal>44</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION1_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION1_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION1_DSC</remote-alias>
+              <ordinal>45</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION2</remote-alias>
+              <ordinal>46</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION2_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION2_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION2_DSC</remote-alias>
+              <ordinal>47</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION3</remote-alias>
+              <ordinal>48</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION3_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION3_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION3_DSC</remote-alias>
+              <ordinal>49</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION4</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION4</remote-alias>
+              <ordinal>50</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION4_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION4_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION4_DSC</remote-alias>
+              <ordinal>51</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION5</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION5</remote-alias>
+              <ordinal>52</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DX_RELACION5_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DX_RELACION5_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DX_RELACION5_DSC</remote-alias>
+              <ordinal>53</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FECHA_INGRESO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[FECHA_INGRESO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FECHA_INGRESO</remote-alias>
+              <ordinal>54</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FECHA_EGRESO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[FECHA_EGRESO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FECHA_EGRESO</remote-alias>
+              <ordinal>55</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DIAS_ESTANCIA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DIAS_ESTANCIA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DIAS_ESTANCIA</remote-alias>
+              <ordinal>56</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_FECHA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_FECHA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_FECHA</remote-alias>
+              <ordinal>57</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_DIAS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PA_DIAS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_DIAS</remote-alias>
+              <ordinal>58</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_SECCION</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_SECCION]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_SECCION</remote-alias>
+              <ordinal>59</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_FC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_FC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_FC</remote-alias>
+              <ordinal>60</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_FR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_FR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_FR</remote-alias>
+              <ordinal>61</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_SO2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_SO2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_SO2</remote-alias>
+              <ordinal>62</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_O2_SUPL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_O2_SUPL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_O2_SUPL</remote-alias>
+              <ordinal>63</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_PAS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_PAS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_PAS</remote-alias>
+              <ordinal>64</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_PAD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_PAD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_PAD</remote-alias>
+              <ordinal>65</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_TEMP</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_TEMP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_TEMP</remote-alias>
+              <ordinal>66</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_NIVEL_CONC</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PA_NIVEL_CONC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_NIVEL_CONC</remote-alias>
+              <ordinal>67</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_NIVEL_CONC_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_NIVEL_CONC_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_NIVEL_CONC_DSC</remote-alias>
+              <ordinal>68</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_CLASIFICA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_CLASIFICA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_CLASIFICA</remote-alias>
+              <ordinal>69</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_NEWS2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_NEWS2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_NEWS2</remote-alias>
+              <ordinal>70</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_FECHA_LLEGADA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_FECHA_LLEGADA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_FECHA_LLEGADA</remote-alias>
+              <ordinal>71</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_MINUTOS_LLEGADA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PA_MINUTOS_LLEGADA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_MINUTOS_LLEGADA</remote-alias>
+              <ordinal>72</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_FECHA_RTA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_FECHA_RTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_FECHA_RTA</remote-alias>
+              <ordinal>73</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_MINUTOS_RTA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PA_MINUTOS_RTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_MINUTOS_RTA</remote-alias>
+              <ordinal>74</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_EQUIPO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_EQUIPO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_EQUIPO</remote-alias>
+              <ordinal>75</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_OBSERVACION</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_OBSERVACION]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_OBSERVACION</remote-alias>
+              <ordinal>76</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PA_CONDUCTA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PA_CONDUCTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PA_CONDUCTA</remote-alias>
+              <ordinal>77</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_FECHA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_FECHA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_FECHA</remote-alias>
+              <ordinal>78</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_DIAS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MP_DIAS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_DIAS</remote-alias>
+              <ordinal>79</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_SECCION</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_SECCION]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_SECCION</remote-alias>
+              <ordinal>80</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_FC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_FC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_FC</remote-alias>
+              <ordinal>81</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_FR</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_FR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_FR</remote-alias>
+              <ordinal>82</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_SO2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_SO2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_SO2</remote-alias>
+              <ordinal>83</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_O2_SUPL</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_O2_SUPL]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_O2_SUPL</remote-alias>
+              <ordinal>84</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_PAS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_PAS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_PAS</remote-alias>
+              <ordinal>85</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_PAD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_PAD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_PAD</remote-alias>
+              <ordinal>86</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_TEMP</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_TEMP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_TEMP</remote-alias>
+              <ordinal>87</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_NIVEL_CONC</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MP_NIVEL_CONC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_NIVEL_CONC</remote-alias>
+              <ordinal>88</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_NIVEL_CONC_DSC</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_NIVEL_CONC_DSC]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_NIVEL_CONC_DSC</remote-alias>
+              <ordinal>89</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_CLASIFICA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_CLASIFICA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_CLASIFICA</remote-alias>
+              <ordinal>90</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_NEWS2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_NEWS2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_NEWS2</remote-alias>
+              <ordinal>91</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_FECHA_LLEGADA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_FECHA_LLEGADA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_FECHA_LLEGADA</remote-alias>
+              <ordinal>92</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_MINUTOS_LLEGADA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MP_MINUTOS_LLEGADA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_MINUTOS_LLEGADA</remote-alias>
+              <ordinal>93</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_FECHA_RTA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_FECHA_RTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_FECHA_RTA</remote-alias>
+              <ordinal>94</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_MINUTOS_RTA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MP_MINUTOS_RTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_MINUTOS_RTA</remote-alias>
+              <ordinal>95</ordinal>
+              <family>Registros Signos</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_EQUIPO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_EQUIPO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_EQUIPO</remote-alias>
+              <ordinal>96</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_OBSERVACION</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_OBSERVACION]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_OBSERVACION</remote-alias>
+              <ordinal>97</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MP_CONDUCTA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MP_CONDUCTA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MP_CONDUCTA</remote-alias>
+              <ordinal>98</ordinal>
+              <family>Registros Signos</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
       <layout dim-ordering='alphabetic' dim-percentage='0.539704' measure-ordering='alphabetic' measure-percentage='0.460296' show-aliased-fields='true' show-structure='true' user-set-layout='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
