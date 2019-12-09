@@ -3,9 +3,16 @@
     flex-direction: column;
 }
 
-.vega-bindings {
-    width: 350px !important;
-    position: absolute;
-    top: 30px;
-    right: -400px;
+.column{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.column-right{
+    display: flex !important;
+    flex-direction: column;
+    padding-bottom: 250px;
 }

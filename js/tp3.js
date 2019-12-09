@@ -1,3 +1,6 @@
+let flag = false;
+let flagStart = false;
+
 const inputSection = new Map();
 const inputRoom = new Map();
 const inputNivelConciencia = new Map();
@@ -9,58 +12,16 @@ async function loadData() {
   data = filterDateNow(data);
   loadList();
   draw(data);
+  addListener();
+  $("#monitor-text")[0].innerHTML=formatDate();
 }
 
 function draw(data) {
-  const selectSection = vl
-    .selectSingle("seccion")
-    .init({ seccion: Array.from(inputSection.values())[0] })
-    .fields("seccion")
-    .bind(vl.menu(Array.from(inputSection.values())));
-
-  const selectRoom = vl
-    .selectSingle("habitacion")
-    .fields("habitacion")
-    .bind(vl.menu(Array.from(inputRoom.values())));
-
-  const selectNivelConciencia = vl
-    .selectSingle("nivel_conc")
-    .fields("nivel_conc")
-    .bind(vl.menu(Array.from(inputNivelConciencia.values())));
-
-  const selectCategory = vl
-    .selectSingle("clasificacion")
-    .fields("clasificacion")
-    .bind(vl.menu(Array.from(inputCategory.values())));
-
-  const selectIngreso = vl
-    .selectSingle("ingreso")
-    .fields("ingreso")
-    .bind(vl.menu(Array.from(inputIngreso.values())));
-
   const hover = vl.selectSingle();
 
   const line = vl
-    .markLine()
-    .transform(
-      vl.filter(
-        vl.and(
-          selectSection,
-          selectRoom,
-          selectNivelConciencia,
-          selectCategory,
-          selectIngreso
-        )
-      )
-    )
-    .select(
-      selectSection,
-      selectRoom,
-      selectNivelConciencia,
-      selectCategory,
-      selectIngreso,
-      hover
-    )
+    .markLine({ point: true })
+    .select(hover)
     .encode(
       vl
         .x()
@@ -87,12 +48,14 @@ function draw(data) {
       vl
         .color()
         .if(hover, vl.fieldQ("news2"))
-        .value("grey"),
+        .value("white"),
       vl
         .opacity()
         .if(hover, vl.value(0.8))
         .value(0.1)
-    );
+    )
+    .height(150)
+    ;
   };
 
   detailsChart1 = vl.hconcat(details("temp"), details("fr"), details("fc"));
@@ -105,8 +68,7 @@ function draw(data) {
 
   vegaEmbed("#chart", chartSpec);
 
-  $( "select" ).addClass( "form-control" );
-  
+  $("select").addClass("form-control");
 }
 
 function loadList() {
@@ -128,10 +90,118 @@ function loadList() {
       inputIngreso.set(element.ingreso, element.ingreso);
     }
   });
+
+  inputSection.forEach(value => {
+    if (!flag) {
+      $("#inputSection").append(
+        `<option value="${value}" selected> ${value}  </option>`
+      );
+    } else {
+      $("#inputSection").append(
+        `<option value="${value}"> ${value}  </option>`
+      );
+    }
+    flag = true;
+  });
+
+  inputRoom.forEach(value => {
+    $("#inputRoom").append(`<option value="${value}"> ${value}  </option>`);
+  });
+
+  inputNivelConciencia.forEach(value => {
+    $("#inputAlert").append(`<option value="${value}"> ${value}  </option>`);
+  });
+
+  inputCategory.forEach(value => {
+    $("#inputCategory").append(`<option value="${value}"> ${value}  </option>`);
+  });
+
+  inputIngreso.forEach(value => {
+    $("#inputIngreso").append(`<option value="${value}"> ${value}  </option>`);
+  });
 }
 
 function filterDateNow(data) {
   const now = new Date();
   return data.filter(x => new Date(x.fecha_hora).getDate() === now.getDate());
 }
+
+function addListener() {
+  let filteredData;
+
+  $("#inputIngreso").change(function() {
+    filter();
+  });
+
+  $("#inputSection").change(function() {
+    filter();
+  });
+
+  $("#inputRoom").change(function() {
+    filter();
+  });
+
+  $("#inputAlert").change(function() {
+    filter();
+  });
+
+  $("#inputCategory").change(function() {
+    filter();
+  });
+  if (!flagStart) {
+    filter();
+  }
+  flagStart = true;
+}
+
+function formatDate() {
+  now = new Date();
+  mes = now.getMonth() + 1;
+  return (
+    now.getDate().toString() + "-" + mes + "-" + now.getFullYear()
+  );
+}
+
+function filter() {
+  filteredData = Object.assign([], data);
+
+  let section = $("#inputSection").val();
+  let room = $("#inputRoom").val();
+  let alert = $("#inputAlert").val();
+  let category = $("#inputCategory").val();
+  let ingreso = $("#inputIngreso").val();
+
+  if (section) {
+    filteredData = filteredData.filter(x => {
+      return x.seccion === section;
+    });
+  }
+
+  if (ingreso) {
+    filteredData = filteredData.filter(x => {
+      return x.ingreso.toString() === ingreso.toString();
+    });
+  }
+
+  if (room) {
+    filteredData = filteredData.filter(x => {
+      return x.habitacion.toString() === room.toString();
+    });
+  }
+
+  if (alert) {
+    filteredData = filteredData.filter(x => {
+      return x.nivel_conc === alert;
+    });
+  }
+
+  if (category) {
+    filteredData = filteredData.filter(x => {
+      return x.clasificacion === category;
+    });
+  }
+
+  draw(this.filteredData);
+}
+
 loadData();

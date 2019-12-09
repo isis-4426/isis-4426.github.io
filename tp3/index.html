@@ -54,8 +54,56 @@
 
   <div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="graph_tp3">
-      <div id="chart"></div>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" style="
+    padding-top: 0.5px !important;" id="graph_tp3">
+
+      <div class="column" id="chart"></div>
+
+      <div class="column column-right">
+        <div class="w-100">
+          <h3 class="mb-0">Monitoreo:
+            <span class="text-primary" id="monitor-text"></span>
+          </h3>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Ingreso</label>
+          <select class="custom-select" id="inputIngreso" autocomplete="on">
+            <option value="" disabled selected>Seleccione su opcion</option>
+            <option value="">Sin Selecion</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Seccion</label>
+          <select class="custom-select" id="inputSection">
+            <option value="" disabled selected>Seleccione su opcion</option>
+            <option value="">Sin Selecion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Habitacion</label>
+          <select class="custom-select" id="inputRoom">
+            <option value="" disabled selected>Seleccione su opcion</option>
+            <option value="">Sin Selecion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nivel de conciencia</label>
+          <select class="custom-select" id="inputAlert">
+            <option value="" disabled selected>Seleccione su opcion</option>
+            <option value="">Sin Selecion</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Clasificacion</label>
+          <select class="custom-select" id="inputCategory">
+            <option value="" disabled selected>Seleccione su opcion</option>
+            <option value="">Sin Selecion</option>
+          </select>
+        </div>
+      </div>
     </section>
 
     <hr class="m-0">
