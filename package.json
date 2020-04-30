@@ -32,7 +32,7 @@
         "@fortawesome/fontawesome-free": "5.10.2",
         "bootstrap": "4.3.1",
         "d3": "^5.14.2",
-        "jquery": "3.4.1",
+        "jquery": "3.5.0",
         "jquery.easing": "^1.4.1",
         "vega": "5.7.2",
         "vega-embed": "5.1.3",
